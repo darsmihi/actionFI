@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+{% block title%}
+Doctors
+{% endblock %}
+
+{% block content%}
+<h1>Doctors</h1>
+<div class = "container text-center">
+{% for d in doctors%}
+
+<div class="card text-center" style="width: 18rem; display:inline-block">
+    <img class="card-img-top" src="{{d.doc_image.url}}">
+    <div class="card-body">
+      <h5 class="card-title">Dr. {{d.doc_name}}</h5>
+      <p class="card-text">{{d.doc_spec}}</p>
+      <h6>{{d.dep_name}} Department</h6>
+    </div>
+  </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
